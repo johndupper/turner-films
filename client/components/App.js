@@ -1,22 +1,39 @@
 import React, { Component } from 'react'
+import axios from 'axios'
 
 class App extends Component {
+  constructor () {
+    super()
+    this.state = {
+      films: []
+    }
+
+    this.getFilms = this.getFilms.bind(this)
+  }
+
+  componentDidMount () {
+    this.getFilms()
+  }
+
+  getFilms () {
+    axios.get('/films')
+      .then(response => {
+        const films = response.data
+        this.setState({ films })
+      })
+      .catch(error => {
+        console.error(error)
+      })
+  }
+
   render () {
     return (
       <div className='App'>
-        <header className='App-header'>
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className='App-link'
-            href='https://reactjs.org'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            Learn React
-          </a>
-        </header>
+        {
+          this.state.films.map(film => (
+            <p>{film.TitleName}</p>
+          ))
+        }
       </div>
     )
   }

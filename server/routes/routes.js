@@ -8,16 +8,15 @@ router.get('/', (req, res) => {
 })
 
 // get all titles
-router.get('/films/all', (req, res) => {
+router.get('/films', (req, res) => {
   Film.find({}, (err, films) => {
     if (err) {
       const error = { message: 'Could not return films', error: err }
-      console.error(error)
       return res.status(500).json(error)
     }
 
     console.log('successfully retrieved films', films.length)
-    res.status(200).json({ films })
+    res.status(200).json(films)
   })
 })
 
