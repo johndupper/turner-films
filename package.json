@@ -9,6 +9,7 @@
     "axios": "^0.18.0",
     "babel-cli": "^6.26.0",
     "body-parser": "^1.18.3",
+    "dotenv": "^6.1.0",
     "ejs": "^2.6.1",
     "express": "^4.16.4",
     "mongoose": "^5.3.4",
@@ -23,8 +24,9 @@
     "webpack-cli": "^3.1.2"
   },
   "scripts": {
+    "lint": "standard --fix",
     "webpack": "webpack",
-    "start": "npm run webpack && nodemon --exec babel-node -- bin/www",
+    "start": "npm run lint && npm run webpack && nodemon --exec babel-node -- bin/www",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
