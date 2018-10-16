@@ -44,7 +44,7 @@ router.get('/films/:title', (req, res) => {
     }
 
     console.log('successfully retrieved matching films', films.length)
-    res.status(200).json({ films })
+    res.status(200).json(films)
   })
 })
 
