@@ -15,17 +15,17 @@ class App extends Component {
     this.getFilms()
   }
 
-  getFilms (title = '') {
+  getFilms (title = null) {
     const url = title ? `/films/${title}` : '/films'
 
     axios.get(url)
       .then(response => {
         const films = response.data
-        this.setState(ps => ({ ...ps, films }))
+        this.setState(prev => ({ ...prev, films }))
       })
       .catch(error => {
         console.error(error)
-        this.setState(ps => ({ ...ps, films: [] }))
+        this.setState(prev => ({ ...prev, films: [] }))
       })
   }
 

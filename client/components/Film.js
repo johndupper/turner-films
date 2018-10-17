@@ -2,13 +2,12 @@ import React, { Component } from 'react'
 import { Button } from 'react-bootstrap'
 import Modal from 'react-modal'
 
+import createModalHTML from '../helpers/createModalHTML'
+
 export default class Film extends Component {
   constructor (props) {
     super(props)
-    this.state = {
-      isModalOpen: false
-    }
-
+    this.state = { isModalOpen: false }
     this.openModal = this.openModal.bind(this)
     this.closeModal = this.closeModal.bind(this)
   }
@@ -23,7 +22,6 @@ export default class Film extends Component {
 
   render () {
     const film = this.props.data
-    console.log('film detail: ', film)
     return (
       <li>
         <p>{film.TitleName} ({film.ReleaseYear})</p>
@@ -39,13 +37,8 @@ export default class Film extends Component {
           onRequestClose={this.closeModal}
           contentLabel={film.TitleName}
           className='Modal'>
-
-          {/* todo: modal detail */}
-
-          <h1>{film.TitleName}</h1>
-          <h4>{film.ReleaseYear}</h4>
-
-          {/* todo: modal detail */}
+          {/* helper function */}
+          { createModalHTML(film) }
         </Modal>
       </li>
     )

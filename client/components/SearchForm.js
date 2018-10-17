@@ -9,14 +9,15 @@ export default class SearchForm extends Component {
   }
 
   onChange (event) {
-    this.setState({ searchText: event.target.value })
+    const searchText = event.target.value
+    this.setState(prev => ({ ...prev, searchText }))
   }
 
   onSubmit (event) {
     event.preventDefault()
     this.props.onSearch(this.state.searchText)
     event.currentTarget.reset()
-    this.setState(ps => ({ ...ps, searchText: '' }))
+    this.setState(prev => ({ ...prev, searchText: '' }))
   }
 
   render () {
