@@ -2,7 +2,7 @@
 
 Welcome to my little slice of the internet.
 This right here is a fun little application I've created 
-to demonstrate I can whip up full-stack web application.
+to demonstrate I can whip up a full-stack web application.
 
 I've opted to use React, can you feel the MERN?
 
