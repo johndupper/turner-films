@@ -32,7 +32,9 @@ class App extends Component {
   render () {
     return (
       <div className='app'>
-        <SearchForm onSearch={this.getFilms} />
+        <h1 id="page-header">What should I watch tonight?</h1>
+        <SearchForm
+          onSearch={this.getFilms} />
         {
           (this.state.films)
             ? (<FilmList data={this.state.films} />)

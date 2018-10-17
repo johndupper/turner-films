@@ -2,6 +2,15 @@
   text-align: center;
 }
 
+#page-header {
+  text-align: center;
+}
+
+.search-form {
+  margin: 1% auto;
+  text-align: center;
+}
+
 .modal-container {
   position: relative;
 }

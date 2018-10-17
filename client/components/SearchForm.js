@@ -22,7 +22,7 @@ export default class SearchForm extends Component {
 
   render () {
     return (
-      <form onSubmit={this.onSubmit}>
+      <form onSubmit={this.onSubmit} className='search-form'>
         <label>Search</label>
         <input type='text' value={this.state.value} onChange={this.onChange} />
         <input type='submit' value='Search/Reset' />
