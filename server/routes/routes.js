@@ -1,4 +1,5 @@
 const express = require('express')
+
 const getAllFilms = require('../methods/getAllFilms')
 const getFilmByTitle = require('../methods/getFilmByTitle')
 
@@ -17,6 +18,7 @@ router.get('/films', (req, res) => {
 
 router.get('/films/:title', (req, res) => {
   const { title } = req.params
+
   getFilmByTitle(title)
     .then(films => res.status(200).json(films))
     .catch(error => res.status(500).send(error))

@@ -11,7 +11,7 @@ const getFilmByTitle = title => {
       TitleName: { $regex: new RegExp(title, 'i') }
     }
 
-    // todo: include searching other object keys
+    // todo: include searching other document keys
 
     Film.find(query, (error, films) => {
       return error ? reject(error) : resolve(films)

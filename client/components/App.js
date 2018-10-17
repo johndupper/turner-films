@@ -24,7 +24,7 @@ class App extends Component {
         this.setState(prev => ({ ...prev, films }))
       })
       .catch(error => {
-        console.error(error)
+        console.error('Houston, we have a problem:', error)
         this.setState(prev => ({ ...prev, films: [] }))
       })
   }
@@ -35,7 +35,7 @@ class App extends Component {
         <SearchForm onSearch={this.getFilms} />
         {
           (this.state.films)
-            ? <FilmList data={this.state.films} />
+            ? (<FilmList data={this.state.films} />)
             : ''
         }
       </div>

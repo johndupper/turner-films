@@ -25,7 +25,7 @@ export default class SearchForm extends Component {
       <form onSubmit={this.onSubmit}>
         <label>Search</label>
         <input type='text' value={this.state.value} onChange={this.onChange} />
-        <input type='submit' value='Search' />
+        <input type='submit' value='Search/Reset' />
       </form>
     )
   }
